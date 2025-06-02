@@ -10,7 +10,7 @@ from ..make_rest_api_call import MakeRestApiCall
 
 def get_iocs(config: dict, params: dict) -> dict:
     MK = MakeRestApiCall(config=config)
-    endpoint = "/aci/{org_id}/iocs"
+    endpoint = "/aci/{org_id}/intel/iocs"
     if 'report_id' in params:
         params["report_id"] = str(params["report_id"]).strip('[]')
     for date_param in ("start_date", "end_date"):

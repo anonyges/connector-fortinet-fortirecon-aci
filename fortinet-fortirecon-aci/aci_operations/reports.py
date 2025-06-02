@@ -11,7 +11,7 @@ from ..make_rest_api_call import MakeRestApiCall
 def get_reports(config: dict, params: dict) -> dict:
 
     MK = MakeRestApiCall(config=config)
-    endpoint = "/aci/{org_id}/reports"
+    endpoint = "/aci/{org_id}/intel/reports"
     method = "GET"
 
     if params.get("start_date"):
@@ -26,7 +26,7 @@ def get_reports(config: dict, params: dict) -> dict:
 def get_reports_with_iocs(config: dict, params: dict) -> dict:
 
     MK = MakeRestApiCall(config=config)
-    endpoint = "/aci/{org_id}/reports"+"/{0}".format(params.pop("id"))
+    endpoint = "/aci/{org_id}/intel/reports"+"/{0}".format(params.pop("id"))
     method = "GET"
 
     if params.get("start_date"):
